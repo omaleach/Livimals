@@ -1,4 +1,4 @@
-#' Add a livimals silhouette to a ggplot
+#' Add a livimals silhouette to a ggplot!
 #'
 #' @param animal Name of the image file (without .png)
 #' @param size Size of the image (0.1 is small, 0.5 is big)
