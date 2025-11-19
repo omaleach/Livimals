@@ -17,7 +17,7 @@ add_livimal <- function(animal,
                         mapping = NULL,
                         data = NULL,
                         x_val = NULL,
-                        y_val = NULL) {
+                        y_val = NULL, ...) {
 
   if (!requireNamespace("magick", quietly = TRUE)) {
     stop("Package 'magick' is required")
@@ -61,7 +61,7 @@ add_livimal <- function(animal,
         by = "width",
         asp = 1,
         image = tmp_file,
-        inherit.aes = TRUE))
+        inherit.aes = TRUE, ...))
   }
   # No mapping
   if (!is.null(data)) {
@@ -80,7 +80,7 @@ add_livimal <- function(animal,
     size = size,
     by = "width",
     asp = 1,
-    inherit.aes = FALSE)
+    inherit.aes = FALSE, ...)
 }
 
 #devtools::document()
