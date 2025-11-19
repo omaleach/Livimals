@@ -15,9 +15,7 @@ add_livimal <- function(animal,
                         y = 1,
                         color = "black",
                         mapping = NULL,
-                        data = NULL,
-                        x_val = NULL,
-                        y_val = NULL, ...) {
+                        data = NULL, ...) {
 
   if (!requireNamespace("magick", quietly = TRUE)) {
     stop("Package 'magick' is required")
@@ -40,15 +38,6 @@ add_livimal <- function(animal,
     if (!is.null(data)) {
       df <- data
       df$image <- tmp_file
-      # Filter by x_val / y_val if provided
-      if (!is.null(x_val)) {
-        x_col <- rlang::as_label(mapping$x)
-        df <- df[df[[x_col]] %in% x_val, ]
-      }
-      if (!is.null(y_val)) {
-         y_col <- rlang::as_label(mapping$y)
-        df <- df[df[[y_col]] %in% y_val, ]
-      }
     } else {
       df <- NULL
     }
