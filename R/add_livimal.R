@@ -37,7 +37,7 @@ add_livimal <- function(animal,
 
     if (!is.null(data)) {
       df <- data
-      df$image <- tmp_file
+      df$image <- rep(tmp_file, nrow(df))
     } else {
       df <- NULL
     }
