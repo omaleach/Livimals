@@ -46,7 +46,7 @@ add_livimal <- function(animal,
         data = df,
         mapping = mapping,
         by = "width",
-        asp = 1
+        asp = 1,
         inherit.aes = TRUE, ...))
   }
   # No mapping
