@@ -6,6 +6,7 @@
 #' @param y Optional y-position. Used only when no aes() is supplied.
 #' @param color Optional color to apply to the silhouette (default "black")
 #' @param mapping Optional aes() for x, y, or image.
+#' @param ... Additional arguments passed to geom_image()
 #'
 #' @return A ggplot2 layer
 #' @export
