@@ -24,12 +24,12 @@ col_livimal <- function(animal,
 
 # Names of PNGs that should NEVER be recolored
   protected_colors <- c("hareyb", "harerb", "raptorb", "raptoryb", "tortoiseyb", "tortoiserb", "salmonrb", "salmonyb", "weevilyb", "weevilrb", "frogrb", "frogyb")
-
-  img_path <- system.file("extdata", paste0(animal, ".png"), package = "livimals")
-  if (img_path == "") stop("oops no image found for that animal!")
-  if(border==T){
+ if(border==T){
 	  animal=paste0(animal, "rb")
   }
+  img_path <- system.file("extdata", paste0(animal, ".png"), package = "livimals")
+  if (img_path == "") stop("oops no image found for that animal!")
+ 
   img <- magick::image_read(img_path)
   centre <- paste0("+", magick::image_info(img)$width/2, "+", magick::image_info(img)$height/2)
 
@@ -53,7 +53,7 @@ if (!is.null(mapping$fill)) {
 
       tmp_file <- tempfile(fileext = ".png")
       magick::image_write(img_colored, tmp_file)
-      data[data[[fill_var]] == i, "ColImage"] <- tmp_file
+      data[which(data[,fill_var] == i), "ColImage"] <- tmp_file
     }
  } else {
 	if (!is_protected) {
