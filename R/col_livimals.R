@@ -46,7 +46,7 @@ if (!is.null(mapping$fill)) {
 
       # Only recolor if NOT protected
       if (!is_protected | border == T) {
-        img_colored <- magick::image_fill(img,i, point=centre, fuzz=30)
+        img_colored <- magick::image_fill(img,i, point=centre, fuzz=50)
       } else {
         img_colored <- img  
       }
